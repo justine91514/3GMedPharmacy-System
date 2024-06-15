@@ -1,2 +1,2 @@
-# 3GMedPharmacy-System
-latest
+# 3G-pharmacy-system
+Web Hosted System
