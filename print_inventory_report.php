@@ -256,15 +256,15 @@
 
                 <div class="table-responsive">
 
-                    <?php
-                    $query = "SELECT add_stock_list.*, product_list.measurement 
+                <?php
+$query = "SELECT add_stock_list.*
 FROM add_stock_list
 JOIN product_list ON add_stock_list.product_stock_name = product_list.prod_name
 WHERE ('$selectedBranch' = 'All' OR add_stock_list.branch = '$selectedBranch')
 ORDER BY id DESC"; // Assuming 'id' is the column representing the last added items
-                    $query_run = mysqli_query($connection, $query);
+$query_run = mysqli_query($connection, $query);
+?>
 
-                    ?>
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead style="background-color: #304B1B; color: white;">
                             <th style="vertical-align: middle;">ID</th>

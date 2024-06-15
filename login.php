@@ -45,8 +45,9 @@ if (session_status() == PHP_SESSION_NONE) {
             /* Apply blur effect */
             -webkit-backdrop-filter: blur(10px);
             /* Safari */
-            backdrop-filter: blur(5px);
-            /* Standard */
+            /*background: rgb(237, 237, 237,.1);*/
+           backdrop-filter: blur(5px);
+            
         }
 
         .error-message {
@@ -109,6 +110,8 @@ if (session_status() == PHP_SESSION_NONE) {
         .input-group-text {
             cursor: pointer;
         }
+
+        
     </style>
 </head>
 
