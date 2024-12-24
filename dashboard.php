@@ -399,7 +399,108 @@ chart.render();
 </style>
 
 
+<script>
+    var isBarChart = true; // Initially set as bar chart
+    var totalSalesChart; // Variable to store the chart instance
 
+    // Function to create the bar chart
+    function createBarChart() {
+        var totalSalesData = {
+            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            datasets: [{
+                label: 'Total Sales',
+                data: [1000, 2000, 1500, 3000, 2500, 1800, 2200], // Example data (replace with actual data)
+                backgroundColor: '#259E9E', // Solid blue background color for the bars
+                borderColor: '#259E9E', // Solid border color for the bars
+                borderWidth: 2 // Increase the border width for better visibility
+            }]
+        };
+
+        // Get the canvas element
+        var ctx = document.getElementById('totalSalesChart').getContext('2d');
+
+        // Destroy the existing chart if it exists
+        if (totalSalesChart) {
+            totalSalesChart.destroy();
+        }
+
+        // Create the bar chart
+        totalSalesChart = new Chart(ctx, {
+            type: 'bar',
+            data: totalSalesData,
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                legend: {
+                    display: false // Remove legend labels and box
+                }
+            }
+        });
+    }
+
+    // Function to create the line chart
+    function createLineChart() {
+        var totalSalesData = {
+            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            datasets: [{
+                label: 'Total Sales',
+                data: [1000, 2000, 1500, 3000, 2500, 1800, 2200], // Example data (replace with actual data)
+                backgroundColor: '', // Set solid blue background color for the line
+                borderColor: '#259E9E', // Set solid blue border color for the line
+                borderWidth: 1
+            }]
+        };
+
+        // Get the canvas element
+        var ctx = document.getElementById('totalSalesChart').getContext('2d');
+
+        // Destroy the existing chart if it exists
+        if (totalSalesChart) {
+            totalSalesChart.destroy();
+        }
+
+        // Create the line chart
+        totalSalesChart = new Chart(ctx, {
+            type: 'line',
+            data: totalSalesData,
+            options: {
+                aspectRatio: 4, // Set a custom aspect ratio (width:height)
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                legend: {
+                    display: false // Remove legend labels and box
+                }
+            }
+        });
+    }
+
+    // Call the createBarChart function by default
+    createBarChart();
+
+    // Function to toggle between bar and line chart
+    function toggleChartType() {
+        if (isBarChart) {
+            createLineChart(); // Switch to line chart
+            document.getElementById('barIcon').style.opacity = '0';
+            document.getElementById('lineIcon').style.opacity = '1';
+        } else {
+            createBarChart(); // Switch to bar chart
+            document.getElementById('lineIcon').style.opacity = '0';
+            document.getElementById('barIcon').style.opacity = '1';
+        }
+        isBarChart = !isBarChart; // Toggle the chart type flag
+    }
+</script>
 
 <style>
     /* The switch */
