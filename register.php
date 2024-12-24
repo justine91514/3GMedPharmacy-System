@@ -153,7 +153,7 @@ $selectedBranch = isset($_GET['branch']) ? $_GET['branch'] : 'All';
                     $connection = mysqli_connect("localhost", "root", "", "dbpharmacy");
 
                     // Query to fetch product details with total quantity per branch
-                    $query = "SELECT p.id, p.prod_name, p.categories, p.type, p.measurement, 
+                    $query = "SELECT p.id, p.prod_name, p.categories, p.type, 
                           SUM(CASE WHEN a.branch = 'Cell Med' THEN a.quantity ELSE 0 END) AS 'Cell Med',
                           SUM(CASE WHEN a.branch = '3G Med' THEN a.quantity ELSE 0 END) AS '3G Med',
                           SUM(CASE WHEN a.branch = 'Boom Care' THEN a.quantity ELSE 0 END) AS 'Boom Care',

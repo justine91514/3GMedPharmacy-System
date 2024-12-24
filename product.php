@@ -19,6 +19,7 @@
             /* Adjust the value as needed */
         }
     </style>
+    
 </head>
 
 <body>
@@ -305,7 +306,7 @@
     include 'logout_modal.php';
     ?>
 
-    <?php
+<?php
     include ('includes/scripts.php');
     include ('includes/footer.php');
     ?>
@@ -332,7 +333,6 @@
             $('#warningModal').modal('show');
         }
     });
-saesaerafeiyurydikyruktysku
     $('#warningModal').on('hidden.bs.modal', function () {
         $('#addadminprofile').css('z-index', '1050');
     });
@@ -373,7 +373,7 @@ saesaerafeiyurydikyruktysku
             $('#dataTable').DataTable({
                 "paging": true,
                 "lengthChange": true,
-                "pageLength": 10, // Display 10 entries per page
+                "pageLength": 10, // Display 10 entries per page`
                 "searching": true,
                 "ordering": true, // Enable ordering/sorting
                 "info": true,

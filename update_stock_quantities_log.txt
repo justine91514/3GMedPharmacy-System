@@ -338,3 +338,5 @@ Item: Downy, Quantity: 10
 Quantities updated successfully.
 Item: fesrvydrgdtrytfcyh, Quantity: 10
 Quantities updated successfully.
+Item: Downy, Quantity: 5
+Quantities updated successfully.

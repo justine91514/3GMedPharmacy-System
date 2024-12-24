@@ -79,9 +79,9 @@
     });
 </script>
 
-/************************
+<!--/************************
             Code for Void In Pos
-    ************************/
+    ************************/ -->
     <script>
         $(document).ready(function () {
             var voidButtonClicked = false;
